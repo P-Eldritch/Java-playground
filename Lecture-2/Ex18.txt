@@ -1,0 +1,52 @@
+//BRUTE FORCE. solve it in a more elegant way if there is time left
+
+import java.awt.*;
+import javax.swing.JFrame;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
+
+public class Ex18 extends JFrame {
+    public Ex18() {
+        setTitle("19 užduotis: paveiksliukai");
+        setSize(960, 480);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    } 
+    public static void main(String[] args) {
+        Graphics19ex pav = new Graphics19ex();
+    }
+    public void paint(Graphics g) {
+        //namukas
+        g.setColor(Color.orange);
+        g.fillRect(150, 250, 100, 80);
+        
+        g.setColor(Color.red);
+        int xpoints[] = {140, 200, 260};
+        int ypoints[] = {250, 180, 250};
+        int npoints = 3;
+        g.fillPolygon(xpoints, ypoints, npoints);
+
+        g.setColor(Color.darkGray);
+        g.fillRect(170, 280, 25, 50);
+        g.fillRect(210, 280, 25, 25);
+        
+        //saule
+        g.setColor(Color.CYAN);
+        g.fillOval(450, 250, 100, 100);
+        g.drawLine(350, 300, 650, 300);
+        g.drawLine(500, 150, 500, 450);
+        g.drawLine(400, 200, 600, 400);
+        g.drawLine(400, 400, 600, 200);
+        
+        // zvaigzde is dvieju lygiakrasciu trikampiu
+        g.setColor(Color.green);
+        int xpoints2[] = {700, 750, 800};
+        int ypoints2[] = {317, 230, 317};
+        int npoints2 = 3;
+        
+        g.fillPolygon(xpoints2, ypoints2, npoints2);
+        int xpoints3[] = {700, 750, 800};
+        int ypoints3[] = {260, 347, 260};
+        int npoints3 = 3;
+        g.fillPolygon(xpoints3, ypoints3, npoints3);
+   }
+}

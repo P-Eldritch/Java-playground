@@ -1,0 +1,25 @@
+//pakeisti recursive versija i iterative ir pagreites
+
+public class Ex20Fib {
+        public static long Fibonacci(int N) {
+        if (N == 0) return 0;
+        if (N == 1) return 1;
+        else {
+        int previous = 0;
+        int next = 1;
+        int current=1;
+        for (int i=2; i<=N; i++){
+           next = current + previous;
+           previous = current;
+           current = next;          
+        }
+        return next;}
+    }
+    public static void main(String[] args)
+    {
+        for (int N = 0; N < 100; N++) {
+            System.out.println(N + " " + Fibonacci(N));
+        }
+    }
+}
+

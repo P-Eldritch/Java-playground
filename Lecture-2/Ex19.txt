@@ -1,0 +1,64 @@
+// su ArrayLists ir enhanced for loops
+
+import java.io.*;
+import java.util.*;
+
+public class Ex19v3 {
+        public static class readfile {
+        private Scanner x; 
+        // al - nuskenuoti elementai bus saugomi; newAl - nuskenuoti elementai, pasalinus dubli
+        private ArrayList<String> al = new ArrayList<String>(); 
+        private ArrayList<String> newAl= new ArrayList<String>();
+            public void openFile(){ 
+                try{
+                    x = new Scanner(new File("C:\\as pati\\mokslas\\Algorithms "
+                            + "and data structures\\JavaLecture2\\test1.txt")); 
+                }
+                catch(Exception e) { //kaip elgtis su exception
+                System.out.println("couldnt find a file");
+                }
+            }
+        public ArrayList readFile(){
+            while(x.hasNext()){ //Scannerio metodas, kol yra sekantis elementas, grazina true
+            String a = x.next(); 
+            al.add(a); //prideda nuskenuota eilute i al
+            System.out.println(a); 
+        }
+        return al;
+        }
+        public void closeFile(){
+        x.close();
+        }
+        public ArrayList removeDupl(){
+            //jeigu naujame arrayListe neegzistuoja nuskenuota eilute a is senojo list, 
+            //tai ta eilute bus prideta i nauja lista; 
+            for(String duplicate : al) { 
+                if (!newAl.contains(duplicate)) {
+                    newAl.add(duplicate);
+                }              
+            }
+            System.out.println(newAl);
+            return newAl;
+        }
+        public void writeNewFile(){ 
+            try{
+                PrintStream out = new PrintStream(new FileOutputStream("C:\\as pati\\"
+                    + "mokslas\\Algorithms and data structures\\JavaLecture2\\test3.txt")); // sukuria fila ir iraso informacija ten
+                for(String a: newAl) {
+                    out.println(a + "\n");
+                }
+            }
+            catch (Exception e){
+                System.out.println("congrats, you have an error!");
+            }
+        }
+    }
+    public static void main(String[] args) {
+        readfile r = new readfile();
+        r.openFile();
+        r.readFile();
+        r.closeFile();
+        r.removeDupl();
+        r.writeNewFile();
+    }
+}

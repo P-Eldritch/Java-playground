@@ -1,0 +1,34 @@
+//it works, but it would be great to use ArrayLists if there is time left
+
+import java.util.Scanner;
+
+public class Ex16 { 
+    public static void main(String[] args) {
+     Scanner scan = new Scanner(System.in);
+     System.out.println("kiek bus ivesta eiluciu?");
+     
+     int N = scan.nextInt(); //eiluciu sk
+     String[] vardas = new String[N];
+     int[] fNum = new int[N];
+     int[] sNum = new int[N];
+     double[] santykis = new double[N]; // santykis = fnum/snum
+     System.out.println("iveskite varda(0-20 zenklu) ir du sveikus skaicius "
+             + "intervale [-255;255], atskirkite tarpais");
+     //suvedamos eilutes i masyvus:
+     for(int i=0; i<N; i++) {
+         vardas[i] = scan.next();
+         fNum [i] = scan.nextInt();
+         sNum [i] = scan.nextInt();
+         double fNumDouble = fNum[i]; //int -> double, kad dalybos rezultate vertes po kablelio nebutu nuliai
+         double sNumDouble = sNum[i]; 
+         santykis[i] = fNumDouble/sNumDouble;
+     }
+     // spausdinama:
+     System.out.printf("%-20s %-10s %-10s %-10s","vardas ", "1 skaicius ", "2 skaicius ","1 sk./2sk."); //col titles
+     System.out.println();
+     for (int i=0; i<N; i++) {
+         System.out.printf("%-20s %-11d %-11d %-7.3f", vardas[i],fNum[i], sNum[i],santykis[i]);
+         System.out.println();
+     }
+    }
+}
