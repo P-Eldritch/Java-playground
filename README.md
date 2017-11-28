@@ -20,7 +20,8 @@ Nupieškite su grafiniais elementais namą, saulę (su keliais spinduliais), žv
 ### 19 exercise
 Sukurkite failą test1.txt. Parašykite programą, kuri ištrintų skaičių dublikatus ir atsakymą išsaugotų naujame faile. 
 
-test1.txt
+
+*test1.txt
 45
 78
 96
@@ -40,7 +41,7 @@ test1.txt
 68
 25
 43
-68
+68*
 
 ### 20 Exercise
 
