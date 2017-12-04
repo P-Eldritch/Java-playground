@@ -1,0 +1,56 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Ex21 {
+    
+    public static class findPrices {
+        private int y, m, d;
+        private Scanner scan;
+        private String inputLine, dateString;
+        
+        public void readInput() {
+            //reads user input
+            scan = new Scanner(System.in);
+            System.out.println("iveskite data YYYY MM DD formatu:");
+            y = scan.nextInt();
+            m = scan.nextInt();
+            d = scan.nextInt();
+        }
+        public void formatInput() {
+            //formatting date; MMM+dd%2'C'+yyyy was chosen because this is how start/end points appear in url
+            SimpleDateFormat formattedDate = new SimpleDateFormat("MMM+dd%2'C'+yyyy", Locale.ENGLISH);
+            Calendar cal = Calendar.getInstance();
+            cal.set(y, m-1, d);
+            dateString = (formattedDate.format(cal.getTime()));
+        }
+ 
+        public void readUrl(){
+            //start/end points in url are changed to the formatted date input from user
+            try {
+                URL url = new URL("http://finance.google.com/finance/historical?"
+                    + "cid=304466804484872&startdate="+dateString+"&enddate="
+                    + ""+dateString+"&output=csv ");
+                BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+                while ((inputLine = in.readLine())!= null) {
+                    System.out.println(inputLine);
+                }
+                in.close();
+            }
+            catch(Exception e) { 
+                System.out.println("couldnt find a file");
+            }
+        }
+    }
+    public static void main(String[] args)
+    {
+        findPrices test = new findPrices();
+        test.readInput();
+        test.formatInput();
+        test.readUrl();
+    }
+}

@@ -64,3 +64,6 @@ public class Fib {
 ```
 Parašykite greitesnę programą, kuri užbaigtų darbą per ~1s. 
 
+### 21 Exercise
+
+Sukurkite programą, kuri paprašytų vartotojo įvesti metus ir mėnesį ir kuri išvestų į ekraną to mėnesio didžiausią ir mažiausią Google akcijų kainą bei kokiom dienom tai buvo. Programa turėtų nuskaityti akcijų kainas iš (http://finance.yahoo.com) puslapyje esančio CSV failo.
