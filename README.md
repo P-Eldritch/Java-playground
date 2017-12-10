@@ -81,14 +81,14 @@ Sukurkite klasę Date, kuri išvestų klaidą, jei vartotojas įvestų ne datą,
 ### 24 Exercise 
 
 Parašykite programą, kuri išvestų trikampį, sudarytą iš 0. Trikampio aukštis N priklauso nuo to, kokį skaičių įves vartotojas. Tarkim, jei N=6, tai: 
-
+```
      0   
     000
    00000  
   0000000
  000000000
 00000000000
-
+```
 
 ### 25 Exercise 
 
