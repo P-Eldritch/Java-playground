@@ -1,0 +1,45 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class L4E1 {
+    private Stack<String> stack = new Stack<String>();
+    private Scanner scan = new Scanner(System.in);
+    private String input, temp; 
+    private int counter = 0;
+    
+    public void reader() {
+        System.out.println("Iveskite, kaip atrode riestainiu seka\n(1 simbolis i viena eilute):");
+        while(!(input = scan.nextLine()).isEmpty()) {
+            String d = input;
+            stack.push(d);
+        }
+    }
+    public void comparator() {
+        while (!(stack.isEmpty())) {
+            temp = stack.peek(); 
+            if (temp.equals("O")) {
+                stack.pop();
+                stack.pop();
+                stack.pop();
+            }
+            else if (temp.equals("B")) {
+                counter ++;
+                stack.pop();
+                stack.pop();
+            }
+            else if (temp.equals("A")) {
+                counter = counter + 2;
+                stack.pop();
+            }
+        }
+    }
+    public void printResult() {
+        System.out.println("Linas pardave maziausiai tiek riestainiu: " + counter);
+    }
+    public static void main(String[] args) {
+        L4E1 ex = new L4E1();
+        ex.reader();
+        ex.comparator();
+        ex.printResult();  
+    }
+}
