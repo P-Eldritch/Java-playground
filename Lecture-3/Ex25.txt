@@ -1,0 +1,46 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class L3E4 {    
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String item;
+        int curlyBr = 0;
+        int roundBr = 0;
+        int squareBr = 0;
+        Stack<String> stack = new Stack<String>();
+        while(!(item = scan.nextLine()).isEmpty()) {
+            String d = item;
+            stack.push(d);
+        }
+        for (String i : stack) {
+            if(i.equals("{")) {
+                curlyBr = curlyBr + 1;
+            }
+            else if (i.equals("}")) {
+                curlyBr--;
+            }
+            else if((i.equals("("))) {
+                roundBr++;
+            }
+            else if ((i.equals(")"))) {
+                roundBr--;
+            }
+            else if(i.equals("[")) {
+                squareBr++;
+            }
+            else if (i.equals("]")) {
+                squareBr--;
+            }
+            System.out.println(stack);
+            System.out.println(curlyBr);
+            System.out.println(i);
+        }
+        if (curlyBr ==0  && roundBr ==0 && squareBr ==0) {
+            System.out.println(true);
+        }
+        else {
+            System.out.println(false);
+        }
+    }
+}

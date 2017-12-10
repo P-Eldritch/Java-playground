@@ -12,7 +12,7 @@ public class Ex18 extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     } 
     public static void main(String[] args) {
-        Graphics19ex pav = new Graphics19ex();
+        Ex18 pav = new Ex18();
     }
     public void paint(Graphics g) {
         //namukas

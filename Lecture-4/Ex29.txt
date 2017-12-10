@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Ex29 {
+    private double store;
+    private int var, celcius, far;
+    
+    public  void scanning(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Paspauskite 1 jeigu norite konvertuoti iš Celsijaus skalės į Farengeito skalę\n" +
+        "Paspauskite 2 jeigu norite konvertuoti iš Farengeito skalės į Celsijaus skalę");
+        var  = scan.nextInt();
+        if (var == 1) {
+             System.out.println("Įveskite temperatūrą pagal Celsijaus skalę:");
+             celcius = scan.nextInt();
+             System.out.println("Temperatūra pagal Farengeito skalę:");
+             this.toFahrenheit(celcius);
+        }
+        else if (var == 2) {
+             System.out.println("Įveskite temperatūrą pagal Farengeito skalę:");
+             far = scan.nextInt();
+             System.out.println("Temperatūra pagal Celsijaus skalę:");
+             this.toCelcius(far);
+        }
+    }
+    
+    public void toCelcius(double Fdegrees) 
+    {
+        store = (Fdegrees - 32) * 1.8;
+        System.out.print(store + "\n");
+    }
+    
+        public void toFahrenheit(double Cdegrees) 
+    {
+        store = Cdegrees * 9/5 + 32;
+        System.out.print(store + "\n");
+    }
+        
+    public static void main(String[] args) {
+    Ex29 ex = new Ex29();
+    ex.scanning();
+    }
+}

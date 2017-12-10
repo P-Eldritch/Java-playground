@@ -1,0 +1,41 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Random;
+import javax.swing.JFrame;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
+
+public class L3E1 extends JFrame{
+    private int windowSize = 500; //viso lango krastines lgis
+    private int rectXY = windowSize/4; //atstumas nuo krastu
+    private int rectHeight = windowSize/2; //pacio kvadrato krastines ilgis
+    private int dots = 500;
+    
+    public L3E1() {
+        setTitle("taskuciai");
+        setSize(windowSize, windowSize);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        } 
+    public static void main(String[] args) {
+        L3E1 pav = new L3E1();
+    }
+    
+    public void paint(Graphics g) {
+        int y, x;
+        Random rand = new Random();
+        g.setColor(Color.black);
+        g.drawRect(rectXY, rectXY, rectHeight, rectHeight);
+        
+        for (int i = 0; i<dots; i++) {
+            x = 1+ rand.nextInt(windowSize);
+            y = 1+ rand.nextInt(windowSize);
+            g.setColor(Color.yellow);
+            if (x>=rectXY && x<=windowSize-rectXY && y>=rectXY && y<=windowSize-rectXY) {
+            g.setColor(Color.red);}
+            else {g.setColor(Color.blue);}
+            g.drawLine(x, y, x, y); 
+            g.fillOval(x-3, y-3, 7, 7); // kad tie nupiesti taskai matytusi, aplink juos nupiesiami skrituliai; 
+
+        }
+    }
+}
