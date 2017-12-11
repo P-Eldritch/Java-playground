@@ -1,0 +1,50 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Ex30 {
+    
+    public static void main (String[] args) {
+        int counter = 1; //to give values for array indexes
+        System.out.println("iveskite N verte N x N dvimaciui masyvui, N>0:");
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        int first[][] = new int[N][N];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                first[i][j] = counter;
+                counter++;
+                System.out.printf("%4d", first[i][j]);
+            }
+            System.out.print("\n");
+        }
+        //skaiciavimas
+        int rStart = 0;
+        int rEnd = N - 1;
+        int cStart = 0;
+        int cEnd = N - 1;
+        Stack<Integer> output = new Stack<>();
+        while(rStart <= rEnd && cStart <= cEnd) {
+            for (int k = cStart; k <= cEnd; k++) {
+                output.push(first[rStart][k]);
+            }
+            rStart++;
+            for(int k = rStart; k <= rEnd; k++) {
+                output.push(first[k][cEnd]);
+            }
+            cEnd--;
+            if(rStart <= rEnd) {
+                for (int k = cEnd; k >= cStart; k--) {
+                   output.push(first[rEnd][k]);
+                }
+            rEnd--;
+            }
+            if (cStart <= cEnd) {
+                for (int k = rEnd; k>=rStart; k--) {
+                   output.push(first[k][cStart]);
+                }
+            cStart++;
+            }
+        }
+    System.out.println(output);    
+    }
+}
