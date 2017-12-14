@@ -1,0 +1,91 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import static javafx.scene.input.KeyCode.N;
+
+public class Ex35 {
+    public static Integer findMaxPoint(int[] a) {
+        int low = 0;
+        int pivotIndex = 0;
+        int high = a.length - 1;
+        while(low<=high) {
+            int  middle = (low + high)/2;
+            if (a[middle]>a[middle-1] && a[middle] > a[middle+1]) {
+                pivotIndex = middle;
+                break;
+            }
+            else if (a[middle]<a[middle-1] && a[middle] > a[middle+1]){
+                high = middle+1;
+            }
+            else if (a[middle]>a[middle-1] && a[middle] < a[middle+1]) {
+                low = middle-1;
+            }
+        }
+        return pivotIndex;
+    }
+    
+    public static Integer binarySearch(int[] a, int maxpoint, int N, String type) {
+    int pivotIndex = -1;
+    if(type.equals("asc")) {
+        int low = 0;
+        int high = maxpoint-1;
+        while (low<=high) {
+           int  middle = (low+high)/2;
+            if (N == a[middle]) {
+                pivotIndex = middle;
+                break;
+            }
+            else if (N > a[middle]) {
+                low = middle + 1;
+            }
+            else if (N < a[middle]) {
+                high = middle -1;
+            }
+        }
+    }
+    else if (type.equals("desc")) {
+        int low = maxpoint+1;
+        int high = a.length-1;
+        while (low<=high) {
+            int  middle = (low+high)/2;
+            if (N == a[middle]) {
+                pivotIndex = middle;
+                break;
+            }
+            else if (N < a[middle]) {
+                low = middle + 1;
+            }
+            else if (N > a[middle]) {
+                high = middle - 1;
+            }
+        }
+    }
+    return pivotIndex;
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 7, 10, 11, 12, 23, 27, 26, 18, 15, 13, 9, 8, 6, 2, 1, 0, -5};
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Kokio skaiciaus ieskote?");    
+        int N = scan.nextInt();
+        int maxPoint = findMaxPoint(arr);   
+        System.out.println("Maksimali reiksme masyve: "+ arr[maxPoint]);
+
+
+        if (arr[maxPoint] == N) {
+            System.out.println("Skaicius egzistuoja. Jo indexas yra: " + maxPoint );      
+        }
+        else { 
+            int S1 = binarySearch(arr,maxPoint, N, "asc");
+            int S2 = binarySearch(arr,maxPoint, N, "desc");
+            if (S1 >= 0 ) {
+                System.out.println("Skaicius egzistuoja. Jo indexas yra: " + S1);
+            }
+            else if (S2 >= 0) {
+                System.out.println("Skaicius egzistuoja. Jo indexas yra: " + S2);
+            }
+            else {
+                System.out.println("Skauciaus masyve NERA");
+            }
+        }
+    }
+}

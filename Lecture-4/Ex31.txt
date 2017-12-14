@@ -1,0 +1,74 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Ex31 {
+     public static void main (String[] args){
+     int Number = 6;
+    Map<Character, String[]> letters = new HashMap<Character, String[]>();
+    String A[] = {"  ##  "," #  # ","######","#    #","#    #","#    #"};
+    String B[] = {"##### ","#    #","##### ","#    #","#    #","##### "};
+    String[] C = {" #### ","#    #", "#     ", "#     ", "#    #", " #### "};
+    String[] D = {"####  ","#   # ", "#    #", "#    #", "#   # ", "####  "};
+    String E[] = {"######", "#     ", "##### ", "#     ", "#     ", "######"};
+    String[] F = {"######", "#     ", "####  ", "#     ", "#     ", "#     "};
+    String[] G = {" #### ","#    #", "#     ","#  ###", "#    #", " #### "};
+    String[] H = {"#    #","#    #", "######", "#    #", "#    #", "#    #"};
+    String I[] = {"  ##  ", "  ##  ","  ##  ","  ##  ","  ##  ","  ##  "};
+    String[] J = {"######","     #", "     #", "#    #", "#    #", " #### "};
+    String K[] = {"#    #","#   # ","####  ","#  #  ","#   # ","#    #"};
+    String L[] = {"#      ", "#      ", "#      ", "#      ", "#      ", "######"};
+    String[] M = {"#    #", "##  ##", "# ## #", "#    #", "#    #", "#    #"};
+    String N[] = {"#    #", "##   #", "# #  #", "#  # #", "#   ##", "#    #"};
+    String[] O = {" #### ", "#    # ", "#    # ", "#    # ", "#    # ", " #### "};
+    String[] Q = {" #### ", "#    # ", "#    # ", "#    # "," #### ", "    ##"};
+    String[] P = {"##### ", "#    #", "##### ", "#     ", "#     ", "#     "};
+    String[] R = {"##### ", "#    #", "##### ","#  #  ", "#   # ", "#    #"};
+    String[] S = {" #### ", "#     ", " #### ", "     #", "#    #", " #### "};
+    String[] T = {"######", "  ##  ", "  ##  ", "  ##  ", "  ##  ", "  ##  "};
+    String[] U = {"#    #", "#    #", "#    #", "#    #", "#    #", " #### "};
+    String V[] = {"#    #", "#    #","#    #","#    #", " #  # ", "  ##  "};
+    String[] W = {"#    #", "#    #", "#    #", "# ## #", "##  ##", "#    #"};
+    String[] X = {"#    #", " #  # ", "  ##  ", "  ##  ", " #  # ", "#    #"};
+    String[] Y = {"#    #", " #  # ", "  ##  ", "  ##  ", "  ##  ", "  ##  "};
+    String[] Z = {"######", "    # ", "   #  ", "  #   ", " #    ", "######"};
+    String[] Space = {"      ", "      ", "      ", "      ", "      ", "      "};
+    letters.put('A', A);
+    letters.put('B', B);
+    letters.put('C', C);
+    letters.put('D', D);
+    letters.put('E', E);
+    letters.put('F', F);
+    letters.put('G', G);
+    letters.put('H', H);
+    letters.put('I', I);
+    letters.put('J', J);
+    letters.put('K', K);
+    letters.put('L', L);
+    letters.put('M', M);
+    letters.put('N', N);
+    letters.put('O', O);
+    letters.put('Q', Q);
+    letters.put('P', P);
+    letters.put('R', R);
+    letters.put('S', S);
+    letters.put('T', T);
+    letters.put('U', U);
+    letters.put('V', V);
+    letters.put('W', W);
+    letters.put('X', X);
+    letters.put('Y', Y);
+    letters.put('Z', Z);
+    letters.put(' ', Space);
+    Scanner scan = new Scanner(System.in);
+    String stringy = scan.nextLine().toUpperCase();
+    System.out.println(stringy);
+
+    for (int i = 0; i < Number; i++) {
+            for (int k = 0; k < stringy.length(); k++){
+            char c = stringy.charAt(k); 
+            System.out.printf("%-8s", letters.get(c)[i]);}
+        System.out.println();
+    }
+}
+}
