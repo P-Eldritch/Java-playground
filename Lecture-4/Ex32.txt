@@ -1,0 +1,43 @@
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class Ex32 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in).useDelimiter("\\D");
+        int y, m, d;
+        System.out.println("iveskite metus ir menesi YYYY MM formatu:");
+        y = scan.nextInt();
+        m = scan.nextInt()-1;
+        d = 1;
+
+        Calendar cal = Calendar.getInstance();
+        cal.set(y, m, d);
+        int daysInTotal = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+        int monthStartDay = cal.get(Calendar.DAY_OF_WEEK)-2;
+        int month = cal.get(Calendar.MONTH);
+        String months[] = {"Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis",
+        "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", "Gruodis"};
+        String days[] = {"P", "A", "T", "K", "Pn", "Š", "S"};
+        for (int h = 0; h < months.length; h++) {
+            if (h == month) {
+                String dater = months[h] + " " + y;
+                System.out.print("     " + dater + "\n");
+            }
+        }
+        for (int i = 0; i < days.length; i++) {
+            System.out.printf("%3s", days[i]);
+        }
+        System.out.println();
+        for (int k = 0; k < monthStartDay; k++) {
+            System.out.printf("%3s", "");
+        }
+        for (int j = 1; j <= daysInTotal; j++) {
+            System.out.printf("%3s", j);
+            monthStartDay++;
+            if((monthStartDay) % 7 == 0) {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+}
