@@ -190,3 +190,67 @@ ir t.t.
 Bitoninė paieška. Masyvas vadinamas bitoniniu, jeigu jis susideda iš didėjančių skaičių, po kurių eina mažėjantys skaičiai. Parašykite programą, kuri uždavus N ilgio bitoninį masyvą nustatytų ar jame yra ieškomas skaičius ar ne. Algoritmo sudėtingumas blogiausiu atveju turi būti 3lgN. Taip pat išveskite maksimalią masyvo reikšmę. Bitoninio masyvo pvz:
 3 5 7 10 11 12 23 27 26 18 15 13 9 8 6 2 1 0 -5
 
+## 5 Lecture
+
+### 36 Exercise
+
+Parašykite programą, kuri išrūšiuotų tam tikrą atsitiktinių sveikų skaičių bet kokio ilgio seką nuo mažiausio iki didžiausio. Sekos ilgis minimum 20 skaičių. Nenaudoti standartinių Java rūšiavimo bibliotekų \(sort ar pan.\)
+
+### 37 Exercise
+
+Parašykite programą, kuri rastų bet kuriame nurodytame kataloge (su pakatalogiais) vienodus failus (ne pagal pavadinimą ar failo dydį, bet pagal failo struktūrą).
+
+### 38 Exercise
+
+Parašykite programą, kuri rastų bet kokiame duotame tekste ilgiausią žodį. Jei yra keli tokio pačio ilgio žodžiai tai išvestų juos visus.
+
+### 39 Exercise
+
+Parašykite programą, kuri išrūšiuotų domenus abėcėlės tvarka ir užrašytų iš pradžių domeno galūnę, tada domeno pavadinimą, ir tada subdomenu pavadinimą. Jei domenas turi sudbomenų, tai juos irgi išrūšiuoti abėcėlės tvarka. Pvz., turime domenų sąrašą:
+```
+http://www.delfi.lt 
+https://www.google.lt 
+https://en.wikipedia.org 
+http://www.flf.vu.lt 
+http://edition.cnn.com 
+http://mif.vu.lt 
+http://whatis.techtarget.com 
+http://www.skelbiu.lt 
+http://www.fsf.vu.lt 
+http://www.ef.vu.lt 
+http://www.apple.com 
+http://domo.plius.lt 
+http://www.uki.vu.lt 
+http://www.chgf.vu.lt
+```
+
+Turime gauti:
+```
+com.apple
+com.cnn.edition
+lt.delfi
+lt.google
+lt.plius.domo
+lt.skelbiu
+com.techtarget.whatis
+lt.vu.chgf
+lt.vu.ef
+lt.vu.flf
+lt.vu.fsf
+lt.vu.mif
+lt.vu.uki
+org.wikipedia.en```
+
+### 40 Exercise
+
+Parašykite programą, kuri nubraižytų dvi linijas pagal formules: y = ax2 + bx + c ir y = dx + k. Parametrai a, b, c, d ir k įvedami vartotojo. Programa taip pat komandinėje eilutėje turi išvesti linijų susikirtimo tašką, t. y. x ir y reikšmes. Pvz. kai a=2, b=2, c=2, d=2, k=2, susikirtimo taškas [0, 2].
+
+### 41 Exercise
+
+Parašykite programą, kuri paimtų dvi matricas iš skirtingų failų, pvz., matrica1.txt ir matrica2.txt bei išvestų ekrane šių matricų sudėtį, atimtį ir daugybą. Kiekvienam veiksmui atlikti parašykite po atskirą metodą.
+
+## OTHERS
+
+### 2 exercise
+
+Rasti dviejų didelių skaičių \(kelių dešimčių ar šimtų skaitmenų eilės\) M ir N didžiausią bendrąjį daliklį.

@@ -1,0 +1,32 @@
+import java.math.BigInteger;
+
+/* Euklido algoritmas: http://staff.www.ltu.se/~larserik/applmath/chap10en/part3.html
+* dideliems skaiciams saugoti naudojau BigInteger duomenu tipa, nes 
+*/
+public class Others {
+    public static BigInteger dbk(BigInteger num1, BigInteger num2) {
+        BigInteger temp;
+        if (num1.compareTo(num2) == 0) {
+           return num1;
+        }
+        else {
+            if (num1.compareTo(num2) == -1) {
+                BigInteger a = num1;
+                num1=num2;
+                num2=a;
+            } 
+            while(!((num1.mod(num2)).equals(BigInteger.ZERO))) {
+                temp = num1.mod(num2);
+                num1 = num2;
+                num2 =temp;
+            }
+            return num2;
+        }
+    }
+    public static void main(String[] args) {
+        BigInteger first = new BigInteger("1000000000000000000000000000000000000000000000000000000000000000000000000000");
+        BigInteger second = new BigInteger("1000000000");
+        System.out.println(dbk(first,second));
+    }
+    
+}
