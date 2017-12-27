@@ -183,7 +183,7 @@ ir t.t.
 
 ### 34 Exercise
 
-Žaidimas „šilta-šalta“. Reikia atspėti kompiuterio sugalvotą skaičių (random) iš intervalo nuo 1 iki N. Po kiekvieno spėjimo kompiuteris turi išvesti „šilčiau“ arba „šalčiau“ priklausomai nuo to, ar spėjamas skaičius palyginus su ankstesniu spėjamu skaičiumi yra arčiau ar toliau sugalvoto skaičiaus. Pvz., kai N=100, sugalvotas skaičius 83. Spėjimas 1 = 10 (neatspėjote). Spėjimas 2 = 50 (šilčiau). Spėjimas 3 = 80 (šilčiau). Spėjimas 4 = 90 (šalčiau). Spėjimas 5 = 83 (atspėjote).
+Žaidimas „šilta-šalta“. Reikia atspėti kompiuterio sugalvotą skaičių (random) iš intervalo nuo 1 iki *N*. Po kiekvieno spėjimo kompiuteris turi išvesti „šilčiau“ arba „šalčiau“ priklausomai nuo to, ar spėjamas skaičius palyginus su ankstesniu spėjamu skaičiumi yra arčiau ar toliau sugalvoto skaičiaus. Pvz., kai *N = 100*, sugalvotas skaičius 83. Spėjimas 1 = 10 (neatspėjote). Spėjimas 2 = 50 (šilčiau). Spėjimas 3 = 80 (šilčiau). Spėjimas 4 = 90 (šalčiau). Spėjimas 5 = 83 (atspėjote).
 
 ### 35 Exercise
 
@@ -254,3 +254,11 @@ Parašykite programą, kuri paimtų dvi matricas iš skirtingų failų, pvz., ma
 ### 2 exercise
 
 Rasti dviejų didelių skaičių \(kelių dešimčių ar šimtų skaitmenų eilės\) M ir N didžiausią bendrąjį daliklį.
+
+### 3 exercise
+
+Kiekvieną skaičių nuo 1 iki *n* išskaidyti ne daugiau kaip *k* dėmenų suma. Kaip parinkti tokius skirtingus dėmenis, kad jų skaičius būtų minimalus?
+
+### 11 exercise
+
+Sukurti algoritmą ir parašyti programą, kuri aibę iš n skaičių iš pradžių rūšiuoja *Quicksort* metodu, o likus mažesnėms aibėms, pereina prie įterpimo metodo. Kada toks perėjimas tikslingas?

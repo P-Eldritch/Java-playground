@@ -1,0 +1,39 @@
+
+package others;
+
+import java.util.Scanner;
+
+public class Ex3 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("iveskite skaiciu, kuri norit isskaidyti: ");
+        int n = scan.nextInt();
+        System.out.println("iveskite, i kiek demenu bus isskaidytas jusu pasirinktas skaicius: ");
+        int k = scan.nextInt();
+        int[] arr = new int[k];
+        split(arr, n, k);
+        //print:
+        System.out.println();
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+        public static void split(int[] arr, int n, int k) {
+            int counter = 1;
+            int sum = 0;
+            while (sum < n) {
+                for (int i = 0; i < k; i++) {
+                    if(sum == n) {
+                        break;
+                    }
+                    else {
+                        arr[i] = counter;
+                        sum ++;
+                    }
+                }
+                if (sum<n) {
+                    counter++;
+                }
+            }
+        }
+}
