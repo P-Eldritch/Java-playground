@@ -1,0 +1,78 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Ex12 {
+    public static int[] smallestK(int[] input, int k) {
+        int[] kNums = new int[k];
+        mergeSort(input, 0, input.length);
+        System.arraycopy(input, 0, kNums, 0, k);
+        return kNums;
+}
+    public static void mergeSort(int[] input, int start, int end) {
+        if (end-start <= 1) {
+            return;
+        }
+        int mid = (start+end)/2;
+        mergeSort(input, start, mid);
+        mergeSort(input, mid, end);
+        merge(input, start, mid, end);
+    }
+    public static void merge(int[] input, int start, int mid, int end) {
+        // if left and right partitions are sorted
+        if (input[mid-1] <= input[mid]) {
+            return;
+        }
+        int i = start;
+        int j = mid;
+        int tempIndex = 0;     
+        int[] temp = new int[end-start];
+        while (i < mid && j < end) {         
+            if (input[i] <= input[j]) {
+                temp[tempIndex] = input[i];
+                i++;
+            }
+            else {
+                temp[tempIndex] = input[j];
+                j++;
+            }
+            tempIndex++;
+        }
+/*arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
+*src = source array, srcPos, starting position in the src array,
+*dest - destination array, desPos - starting position in dest, 
+*num - num of elements to be copied
+*/
+        System.arraycopy(input, i, input, start + tempIndex, mid-i);
+        System.arraycopy(temp, 0, input, start, tempIndex);
+    }
+    public static int[] rng(int N, int limit) {
+        Random rand = new Random();
+        int a[] = new int[N];
+        for (int i = 0; i<a.length; i++) {
+           a[i] = rand.nextInt(limit*2)-limit;       
+        }
+        return a;
+    }   
+    public static void print (int[] arr) {
+        System.out.println();
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("\n----------");
+    }
+    
+    public static void main(String[] arg) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("iveskite n");
+        int N = scan.nextInt();
+        System.out.println("iveskite didziausia n verte(excluded): ");
+        int limit = scan.nextInt();
+        System.out.println("iveskite k: ");
+        int k = scan.nextInt();
+        int[] beautifulArray = rng(N, limit);
+        print(beautifulArray);
+        int[] smallestNum = smallestK(beautifulArray, k);
+        print(beautifulArray);
+        print(smallestNum); 
+    }
+}

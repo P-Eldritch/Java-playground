@@ -263,3 +263,7 @@ Kiekvieną skaičių nuo 1 iki *n* išskaidyti ne daugiau kaip *k* dėmenų suma
 ### 11 exercise
 
 Sukurti algoritmą ir parašyti programą, kuri aibę iš n skaičių iš pradžių rūšiuoja *Quicksort* metodu, o likus mažesnėms aibėms, pereina prie įterpimo metodo. Kada toks perėjimas tikslingas?
+
+### 12 exercise
+
+Parašyti programą, kurį iš n skaičių surastų k mažiausių. 
